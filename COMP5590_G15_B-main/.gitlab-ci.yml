@@ -1,0 +1,9 @@
+# .gitlab-ci.yml
+image: openjdk:17-jdk-slim
+stages:
+  - build
+
+build:
+  stage: build
+  script:
+    - javac -d bin -cp lib/mysql-*.jar src/Main.java src/engine/*.java src/ui/*.java
